@@ -1,0 +1,23 @@
+{
+    "name": "eth4bytedirectory",
+    "version": "1.0.0",
+    "description": "4 bytes hex codes for eth functions",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/enKryptIO/eth4ByteDirectory.git"
+    },
+    "author": "kvhnuke",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/enKryptIO/eth4ByteDirectory/issues"
+    },
+    "homepage": "https://github.com/enKryptIO/eth4ByteDirectory#readme",
+    "dependencies": {
+        "request": "^2.83.0"
+    }
+}
