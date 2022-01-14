@@ -19,17 +19,18 @@ let writeToFile = function (cont, fileName) {
 let values = {};
 let addToValues = (body, fileName) => {
   body.results.forEach((sig) => {
-    values[sig.hex_signature] = sig.text_signature;
+    if (!values[fileName]) values[fileName] = {};
+    values[fileName][sig.hex_signature] = sig.text_signature;
   });
   if (body.next) getFunctions(body.next, fileName, addToValues);
   else
     writeToFile(
       JSON.stringify({
         created_at: new Date(),
-        results: values,
+        results: values[fileName],
       }),
       fileName
     );
 };
-getFunctions(urlFuncs, "cf-worker/lists/functions", addToValues);
-getFunctions(urlEvents, "cf-worker/lists/functions", addToValues);
+getFunctions(urlFuncs, "functions", addToValues);
+getFunctions(urlEvents, "events", addToValues);
